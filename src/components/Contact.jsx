@@ -80,6 +80,7 @@ const Contact = () => {
                 className="social-link-contact"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
               >
                 <Github size={20} />
                 <span>GitHub</span>
@@ -89,6 +90,7 @@ const Contact = () => {
                 className="social-link-contact"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
                 <span>LinkedIn</span>
@@ -98,6 +100,7 @@ const Contact = () => {
                 className="social-link-contact"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <Instagram size={20} />
                 <span>Instagram</span>
@@ -109,11 +112,27 @@ const Contact = () => {
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Nome</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                autoComplete="name"
+              />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                autoComplete="email"
+              />
             </div>
             <div className="form-group">
               <label htmlFor="subject">Assunto</label>

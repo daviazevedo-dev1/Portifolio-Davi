@@ -16,6 +16,31 @@ const Header = ({ activeSection, setActiveSection }) => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Close mobile menu when window is resized to desktop size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768 && mobileMenuOpen) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [mobileMenuOpen])
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [mobileMenuOpen])
+
   const handleNavClick = (section) => {
     setActiveSection(section)
     setMobileMenuOpen(false)
@@ -34,24 +59,40 @@ const Header = ({ activeSection, setActiveSection }) => {
           <span>Davi.dev</span>
         </div>
 
-        <button className="mobile-menu-button" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button
+          className="mobile-menu-button"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+        >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         <nav className={`nav ${mobileMenuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <button className={activeSection === "home" ? "active" : ""} onClick={() => handleNavClick("home")}>
+              <button
+                className={activeSection === "home" ? "active" : ""}
+                onClick={() => handleNavClick("home")}
+                aria-label="Ir para Home"
+              >
                 Home
               </button>
             </li>
             <li>
-              <button className={activeSection === "about" ? "active" : ""} onClick={() => handleNavClick("about")}>
+              <button
+                className={activeSection === "about" ? "active" : ""}
+                onClick={() => handleNavClick("about")}
+                aria-label="Ir para Sobre"
+              >
                 Sobre
               </button>
             </li>
             <li>
-              <button className={activeSection === "skills" ? "active" : ""} onClick={() => handleNavClick("skills")}>
+              <button
+                className={activeSection === "skills" ? "active" : ""}
+                onClick={() => handleNavClick("skills")}
+                aria-label="Ir para Habilidades"
+              >
                 Habilidades
               </button>
             </li>
@@ -59,12 +100,17 @@ const Header = ({ activeSection, setActiveSection }) => {
               <button
                 className={activeSection === "projects" ? "active" : ""}
                 onClick={() => handleNavClick("projects")}
+                aria-label="Ir para Projetos"
               >
                 Projetos
               </button>
             </li>
             <li>
-              <button className={activeSection === "contact" ? "active" : ""} onClick={() => handleNavClick("contact")}>
+              <button
+                className={activeSection === "contact" ? "active" : ""}
+                onClick={() => handleNavClick("contact")}
+                aria-label="Ir para Contato"
+              >
                 Contato
               </button>
             </li>
