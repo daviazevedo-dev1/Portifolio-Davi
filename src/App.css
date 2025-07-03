@@ -268,6 +268,28 @@ ul {
   align-items: center;
 }
 
+/* Adicionando estilos para a imagem de perfil */
+.profile-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.profile-image:hover img {
+  transform: scale(1.05);
+}
+
 .code-container {
   background-color: var(--bg-tertiary);
   border-radius: 8px;
@@ -913,7 +935,7 @@ section {
   .contact-info {
     margin-bottom: 20px;
   }
-  
+
   .projects-grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
@@ -923,7 +945,7 @@ section {
   html {
     font-size: 15px;
   }
-  
+
   .name {
     font-size: 2.5rem;
   }
@@ -973,16 +995,22 @@ section {
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .section-header h2 {
     font-size: 2.2rem;
   }
-  
+
   .image-placeholder {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* Ajustes responsivos para a imagem */
+  .profile-image {
     width: 250px;
     height: 250px;
   }
@@ -992,15 +1020,15 @@ section {
   html {
     font-size: 14px;
   }
-  
+
   section {
     padding: 60px 15px;
   }
-  
+
   .section-header {
     margin-bottom: 40px;
   }
-  
+
   .section-header h2 {
     font-size: 2rem;
   }
@@ -1030,32 +1058,38 @@ section {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .social-links {
     justify-content: center;
   }
-  
+
   .contact-method {
     flex-direction: column;
     text-align: center;
     align-items: center;
   }
-  
+
   .contact-details {
     text-align: center;
   }
-  
+
   .social-links-container {
     text-align: center;
   }
-  
+
   .social-links {
     justify-content: center;
   }
-  
+
   .submit-button {
     align-self: center;
     width: 100%;
+  }
+
+  /* Ajustes responsivos para a imagem */
+  .profile-image {
+    width: 220px;
+    height: 220px;
   }
 }
 
@@ -1064,42 +1098,43 @@ section {
   .header-container {
     padding: 0 15px;
   }
-  
+
   .name {
     font-size: 2.2rem;
   }
-  
-  .greeting, .title {
+
+  .greeting,
+  .title {
     font-size: 1rem;
   }
-  
+
   .description {
     font-size: 0.95rem;
   }
-  
+
   .image-placeholder {
     width: 200px;
     height: 200px;
   }
-  
-  .about-text h3, 
-  .skills-intro h3, 
-  .projects-intro h3, 
+
+  .about-text h3,
+  .skills-intro h3,
+  .projects-intro h3,
   .contact-info h3 {
     font-size: 1.5rem;
   }
-  
+
   .skill-card,
   .project-card,
   .contact-form-container {
     padding: 15px;
   }
-  
+
   .contact-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .social-link-contact {
     padding: 6px 12px;
   }
@@ -1111,7 +1146,7 @@ section {
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
-  
+
   body {
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
