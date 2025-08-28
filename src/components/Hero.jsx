@@ -33,7 +33,7 @@ const Hero = ({ setActiveSection }) => {
           <div className="code-container">
             <pre>
               <code>
-                <span className="code-comment">// Davi.js</span>
+                
                 <span className="code-keyword">class</span> <span className="code-class">Developer</span> {"{"}
                 <span className="code-property">name</span>:{" "}
                 <span className="code-string">'Davi Oliveira Azevedo'</span>,<span className="code-property">age</span>:{" "}
@@ -41,10 +41,9 @@ const Hero = ({ setActiveSection }) => {
                 <span className="code-string">'Análise e Desenvolvimento de Sistemas'</span>,
                 <span className="code-property">skills</span>: [<span className="code-string">'Flutter'</span>,
                 <span className="code-string">'Mobile Development'</span>,<span className="code-string">'AWS EC2'</span>
-                ,<span className="code-string">'AWS IAM'</span>,<span className="code-string">'React'</span>
+                ,<span className="code-string">'Php Backend'</span>,<span className="code-string">'React'</span>, <span className="code-string">'TypeScript'</span>,<span className="code-string">'Desenvolvimento Web'</span>
                 ],
-                <span className="code-method">sayHello</span>() {"{"}
-                <span className="code-keyword">return</span>{" "}
+                <span className="code-method">sayHello</span> {"{"}
                 <span className="code-string">'Bem-vindo ao meu portfolio!'</span>;{"}"}
                 {"}"}
               </code>

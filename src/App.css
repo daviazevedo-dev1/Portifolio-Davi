@@ -272,7 +272,7 @@ ul {
 .profile-image {
   width: 300px;
   height: 300px;
-  border-radius: 20px;
+  border-radius: 22px;
   overflow: hidden;
   border: 1px solid var(--border-color);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);

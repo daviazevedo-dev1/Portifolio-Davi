@@ -2,38 +2,66 @@ import { Smartphone, Server, Code, Database, Layout } from "lucide-react"
 
 const Skills = () => {
   const skills = [
+    // 🟢 Principais habilidades
     {
-      icon: <Smartphone size={32} />,
-      title: "Desenvolvimento Mobile",
+      icon: <Code size={32} />,
+      title: "React + Vite",
       description:
-        "Criação de aplicativos móveis utilizando Flutter, com foco em interfaces responsivas e experiência do usuário.",
-      level: 80,
-    },
-    {
-      icon: <Server size={32} />,
-      title: "AWS EC2",
-      description: "Configuração e gerenciamento de instâncias EC2 para hospedagem de aplicações na nuvem da Amazon.",
-      level: 45,
+        "Desenvolvimento de aplicações web modernas e performáticas utilizando React com Vite.",
+      level: 75,
+      category: "main",
     },
     {
       icon: <Database size={32} />,
-      title: "AWS IAM",
-      description: "Gerenciamento de identidade e acesso para controle seguro de recursos na AWS.",
+      title: "MySQL",
+      description:
+        "Modelagem e gerenciamento de bancos de dados relacionais para aplicações web.",
+      level: 70,
+      category: "main",
+    },
+    {
+      icon: <Smartphone size={32} />,
+      title: "Flutter",
+      description:
+        "Criação de aplicativos móveis multiplataforma com interfaces responsivas e foco na experiência do usuário.",
+      level: 65,
+      category: "main",
+    },
+    {
+      icon: <Server size={32} />,
+      title: "PHP (Backend)",
+      description:
+        "Desenvolvimento de APIs e lógica de negócio no backend, integrando com MySQL.",
       level: 40,
+      category: "main",
+    },
+
+    // 🟡 Tecnologias em aprendizado
+    {
+      icon: <Server size={32} />,
+      title: "AWS EC2",
+      description:
+        "Configuração e gerenciamento de instâncias EC2 para hospedagem de aplicações na nuvem da Amazon.",
+      level: 50,
+      category: "learning",
     },
     {
       icon: <Code size={32} />,
-      title: "Desenvolvimento Web",
-      description: "Criação de interfaces web utilizando React e outras tecnologias modernas de frontend.",
-      level: 70,
+      title: "TypeScript",
+      description:
+        "Noções iniciais em tipagem estática para projetos React e backend, atualmente em aprendizado.",
+      level: 35,
+      category: "learning",
     },
     {
-      icon: <Layout size={32} />,
-      title: "UI/UX Design",
-      description: "Design de interfaces de usuário intuitivas e experiências que priorizam a usabilidade.",
-      level: 75,
+      icon: <Code size={32} />,
+      title: "Python",
+      description:
+        "Conhecimentos básicos na linguagem Python, aplicando em estudos e pequenos projetos.",
+      level: 30,
+      category: "learning",
     },
-  ]
+  ];
 
   return (
     <section id="skills" className="skills">

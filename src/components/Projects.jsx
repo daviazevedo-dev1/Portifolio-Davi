@@ -12,7 +12,7 @@ const Projects = () => {
 
       image: "project1.jpg",
 
-      githubLink: "https://github.com/IIIcaro/Tcc-Crescer-cidadao/tree/main/src",
+      githubLink: "https://github.com/daviazevedo-dev1/TCC-CIDADAO-Ong.git",
 
       liveLink: "#",
     },
@@ -27,7 +27,7 @@ const Projects = () => {
 
       image: "project2.jpg",
 
-      githubLink: "https://github.com/IIIcaro/Tcc-Crescer-cidadao",
+      githubLink: "https://github.com/daviazevedo-dev1/tcc-backend.git",
 
       liveLink: "#",
     },
