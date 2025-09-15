@@ -1,6 +1,12 @@
+"use client"
+
 import { Github, Linkedin, Twitter, Instagram, Code } from "lucide-react"
+import { useLanguage } from "../contexts/LanguageContext"
+import { translations } from "../translations/translations"
 
 const Footer = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
   const currentYear = new Date().getFullYear()
 
   return (
@@ -27,7 +33,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Davi Oliveira Azevedo. Todos os direitos reservados.</p>
+          <p>
+            &copy; {currentYear} Davi Oliveira Azevedo. {t.allRightsReserved}
+          </p>
         </div>
       </div>
     </footer>

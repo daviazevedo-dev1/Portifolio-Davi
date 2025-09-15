@@ -1,11 +1,15 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Code, Menu, X } from "lucide-react"
+import { Code, Menu, X, Globe } from "lucide-react"
+import { useLanguage } from "../contexts/LanguageContext"
+import { translations } from "../translations/translations"
 
 const Header = ({ activeSection, setActiveSection }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { language, toggleLanguage } = useLanguage()
+  const t = translations[language]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,13 +63,24 @@ const Header = ({ activeSection, setActiveSection }) => {
           <span>Davi.dev</span>
         </div>
 
-        <button
-          className="mobile-menu-button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="header-actions">
+          <button
+            className="language-switcher"
+            onClick={toggleLanguage}
+            aria-label={`Switch to ${language === "pt" ? "English" : "Portuguese"}`}
+          >
+            <Globe size={18} />
+            <span>{language.toUpperCase()}</span>
+          </button>
+
+          <button
+            className="mobile-menu-button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? t.closeMenu : t.openMenu}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         <nav className={`nav ${mobileMenuOpen ? "open" : ""}`}>
           <ul>
@@ -73,45 +88,45 @@ const Header = ({ activeSection, setActiveSection }) => {
               <button
                 className={activeSection === "home" ? "active" : ""}
                 onClick={() => handleNavClick("home")}
-                aria-label="Ir para Home"
+                aria-label={t.goToHome}
               >
-                Home
+                {t.home}
               </button>
             </li>
             <li>
               <button
                 className={activeSection === "about" ? "active" : ""}
                 onClick={() => handleNavClick("about")}
-                aria-label="Ir para Sobre"
+                aria-label={t.goToAbout}
               >
-                Sobre
+                {t.about}
               </button>
             </li>
             <li>
               <button
                 className={activeSection === "skills" ? "active" : ""}
                 onClick={() => handleNavClick("skills")}
-                aria-label="Ir para Habilidades"
+                aria-label={t.goToSkills}
               >
-                Habilidades
+                {t.skills}
               </button>
             </li>
             <li>
               <button
                 className={activeSection === "projects" ? "active" : ""}
                 onClick={() => handleNavClick("projects")}
-                aria-label="Ir para Projetos"
+                aria-label={t.goToProjects}
               >
-                Projetos
+                {t.projects}
               </button>
             </li>
             <li>
               <button
                 className={activeSection === "contact" ? "active" : ""}
                 onClick={() => handleNavClick("contact")}
-                aria-label="Ir para Contato"
+                aria-label={t.goToContact}
               >
-                Contato
+                {t.contact}
               </button>
             </li>
           </ul>

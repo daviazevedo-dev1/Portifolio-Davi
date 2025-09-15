@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { LanguageProvider } from "./contexts/LanguageContext"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import About from "./components/About"
@@ -14,20 +15,22 @@ function App() {
   const [activeSection, setActiveSection] = useState("home")
 
   return (
-    <div className="app">
-      <div className="noise"></div>
-      <div className="app-container">
-        <Header activeSection={activeSection} setActiveSection={setActiveSection} />
-        <main>
-          <Hero setActiveSection={setActiveSection} />
-          <About />
-          <Skills />
-          <Projects />
-          <Contact />
-        </main>
-        <Footer />
+    <LanguageProvider>
+      <div className="app">
+        <div className="noise"></div>
+        <div className="app-container">
+          <Header activeSection={activeSection} setActiveSection={setActiveSection} />
+          <main>
+            <Hero setActiveSection={setActiveSection} />
+            <About />
+            <Skills />
+            <Projects />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </LanguageProvider>
   )
 }
 

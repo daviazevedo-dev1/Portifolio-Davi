@@ -1,37 +1,40 @@
-import { Smartphone, Server, Code, Database, Layout } from "lucide-react"
+"use client"
+
+import { Smartphone, Server, Code, Database } from "lucide-react"
+import { useLanguage } from "../contexts/LanguageContext"
+import { translations } from "../translations/translations"
 
 const Skills = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   const skills = [
     // 🟢 Principais habilidades
     {
       icon: <Code size={32} />,
       title: "React + Vite",
-      description:
-        "Desenvolvimento de aplicações web modernas e performáticas utilizando React com Vite.",
+      description: t.reactDescription,
       level: 75,
       category: "main",
     },
     {
       icon: <Database size={32} />,
       title: "MySQL",
-      description:
-        "Modelagem e gerenciamento de bancos de dados relacionais para aplicações web.",
+      description: t.mysqlDescription,
       level: 70,
       category: "main",
     },
     {
       icon: <Smartphone size={32} />,
       title: "Flutter",
-      description:
-        "Criação de aplicativos móveis multiplataforma com interfaces responsivas e foco na experiência do usuário.",
+      description: t.flutterDescription,
       level: 65,
       category: "main",
     },
     {
       icon: <Server size={32} />,
       title: "PHP (Backend)",
-      description:
-        "Desenvolvimento de APIs e lógica de negócio no backend, integrando com MySQL.",
+      description: t.phpDescription,
       level: 40,
       category: "main",
     },
@@ -40,42 +43,36 @@ const Skills = () => {
     {
       icon: <Server size={32} />,
       title: "AWS EC2",
-      description:
-        "Configuração e gerenciamento de instâncias EC2 para hospedagem de aplicações na nuvem da Amazon.",
+      description: t.awsDescription,
       level: 50,
       category: "learning",
     },
     {
       icon: <Code size={32} />,
       title: "TypeScript",
-      description:
-        "Noções iniciais em tipagem estática para projetos React e backend, atualmente em aprendizado.",
+      description: t.typescriptDescription,
       level: 35,
       category: "learning",
     },
     {
       icon: <Code size={32} />,
       title: "Python",
-      description:
-        "Conhecimentos básicos na linguagem Python, aplicando em estudos e pequenos projetos.",
+      description: t.pythonDescription,
       level: 30,
       category: "learning",
     },
-  ];
+  ]
 
   return (
     <section id="skills" className="skills">
       <div className="section-header">
-        <h2>Habilidades</h2>
+        <h2>{t.skillsTitle}</h2>
         <div className="section-line"></div>
       </div>
       <div className="skills-content">
         <div className="skills-intro">
-          <h3>Minhas Competências Técnicas</h3>
-          <p>
-            Ao longo da minha jornada acadêmica e projetos pessoais, desenvolvi diversas habilidades técnicas que me
-            permitem criar soluções eficientes e modernas.
-          </p>
+          <h3>{t.skillsSubtitle}</h3>
+          <p>{t.skillsDescription}</p>
         </div>
         <div className="skills-grid">
           {skills.map((skill, index) => (

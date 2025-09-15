@@ -1,8 +1,13 @@
 "use client"
 
 import { ArrowDown } from "lucide-react"
+import { useLanguage } from "../contexts/LanguageContext"
+import { translations } from "../translations/translations"
 
 const Hero = ({ setActiveSection }) => {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   const handleScrollDown = () => {
     setActiveSection("about")
     document.getElementById("about").scrollIntoView({ behavior: "smooth" })
@@ -13,19 +18,17 @@ const Hero = ({ setActiveSection }) => {
       <div className="hero-content">
         <div className="hero-text">
           <h1>
-            <span className="greeting">Olá, eu sou</span>
-            <span className="name">Davi Oliveira Azevedo</span>
-            <span className="title">Desenvolvedor Mobile & Web</span>
+            <span className="greeting">{t.greeting}</span>
+            <span className="name">{t.name}</span>
+            <span className="title">{t.title}</span>
           </h1>
-          <p className="description">
-            Estudante de Análise e Desenvolvimento de Sistemas, especializado em Flutter e com conhecimentos em AWS.
-          </p>
+          <p className="description">{t.heroDescription}</p>
           <div className="hero-buttons">
             <button className="primary-button" onClick={handleScrollDown}>
-              Conheça meu trabalho
+              {t.knowMyWork}
             </button>
             <a href="#contact" className="secondary-button" onClick={() => setActiveSection("contact")}>
-              Entre em contato
+              {t.getInTouch}
             </a>
           </div>
         </div>
@@ -33,7 +36,6 @@ const Hero = ({ setActiveSection }) => {
           <div className="code-container">
             <pre>
               <code>
-                
                 <span className="code-keyword">class</span> <span className="code-class">Developer</span> {"{"}
                 <span className="code-property">name</span>:{" "}
                 <span className="code-string">'Davi Oliveira Azevedo'</span>,<span className="code-property">age</span>:{" "}
@@ -41,10 +43,12 @@ const Hero = ({ setActiveSection }) => {
                 <span className="code-string">'Análise e Desenvolvimento de Sistemas'</span>,
                 <span className="code-property">skills</span>: [<span className="code-string">'Flutter'</span>,
                 <span className="code-string">'Mobile Development'</span>,<span className="code-string">'AWS EC2'</span>
-                ,<span className="code-string">'Php Backend'</span>,<span className="code-string">'React'</span>, <span className="code-string">'TypeScript'</span>,<span className="code-string">'Desenvolvimento Web'</span>
+                ,<span className="code-string">'Php Backend'</span>,<span className="code-string">'React'</span>,{" "}
+                <span className="code-string">'TypeScript'</span>,
+                <span className="code-string">'Desenvolvimento Web'</span>
                 ],
                 <span className="code-method">sayHello</span> {"{"}
-                <span className="code-string">'Bem-vindo ao meu portfolio!'</span>;{"}"}
+                <span className="code-string">'{t.welcomeMessage}'</span>;{"}"}
                 {"}"}
               </code>
             </pre>
