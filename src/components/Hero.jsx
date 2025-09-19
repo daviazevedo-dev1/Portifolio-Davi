@@ -43,7 +43,7 @@ const Hero = ({ setActiveSection }) => {
                 <span className="code-string">'Análise e Desenvolvimento de Sistemas'</span>,
                 <span className="code-property">skills</span>: [<span className="code-string">'Flutter'</span>,
                 <span className="code-string">'Mobile Development'</span>,<span className="code-string">'AWS EC2'</span>
-                ,<span className="code-string">'Php Backend'</span>,<span className="code-string">'React'</span>,{" "}
+                ,<span className="code-string">'Php'</span>,<span className="code-string">'React'</span>,{" "}
                 <span className="code-string">'TypeScript'</span>,
                 <span className="code-string">'Desenvolvimento Web'</span>
                 ],
